@@ -23,10 +23,6 @@ public class MyFunctions {
 				bigNum = a;
 
 			}
-			
-
-			// TODO Auto-generated method stub
-
 		}
 		return bigNum;
 	}
@@ -38,9 +34,17 @@ public class MyFunctions {
 		String saveName = "a";
 
 		for (String name : bankAccounts.keySet()) {
-			//(1)keySet(2)values
+			// (1)keySet(2)values
 
-			if (bankAccounts.get(name) <= number) {
+			if (bankAccounts.get(name) == number) {
+
+				saveName = "TIE";
+
+				System.out.println(number);
+
+			}
+
+			else if (bankAccounts.get(name) < number) {
 
 				saveName = name;
 				number = bankAccounts.get(name);
@@ -51,4 +55,42 @@ public class MyFunctions {
 		return saveName;
 
 	}
+
+	public static int addMoney(HashMap<String, Integer> bankAccounts, String name, int credit) {
+		if (bankAccounts.containsKey(name) == true) {
+			int newBalance;
+
+			int initialAccount = bankAccounts.get(name);
+
+			newBalance = initialAccount + credit;
+
+			credit = newBalance;
+
+			bankAccounts.put(name, credit);
+
+		} else {
+			System.out.println(" Person Does Not Exist");
+
+			bankAccounts.put(name, credit);
+
+		}
+
+		return credit;
+
+	}
+
+	public static ArrayList<String> makeArrayList(String word, int N) {
+
+		ArrayList<String> a = new ArrayList<String>();
+
+		for (int i = 0; i < N; i++) {
+
+			a.add(word);
+
+		}
+
+		return a;
+
+	}
+
 }
