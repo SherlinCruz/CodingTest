@@ -93,4 +93,34 @@ public class MyFunctions {
 
 	}
 
+	public static int getTotalMoneyInBank(HashMap<String, Integer> accounts) {
+		int totalAmount = 0;
+
+		for (String name : accounts.keySet()) {
+
+			int amount = accounts.get(name);
+
+			totalAmount += amount;
+
+		}
+
+		return totalAmount;
+	}
+
+	public static ArrayList<String> findCheapskates(HashMap<String, Integer> accounts) {
+		// TODO Auto-generated method stub
+
+		for (String name : accounts.keySet()) {
+
+			if (accounts.get(name) < 0) {
+
+				int a = accounts.get(name);
+
+			}
+
+		}
+
+		return a;
+	}
+
 }
