@@ -110,17 +110,22 @@ public class MyFunctions {
 	public static ArrayList<String> findCheapskates(HashMap<String, Integer> accounts) {
 		// TODO Auto-generated method stub
 
-		for (String name : accounts.keySet()) {
+		ArrayList<String> v = new ArrayList<String>();
+		
 
-			if (accounts.get(name) < 0) {
+		for(String name : accounts.keySet()) {
 
-				int a = accounts.get(name);
+			if (accounts.get(name)<= -1) {
+
+	
+				v.add(name);
 
 			}
-
+			System.out.println(v);
 		}
 
-		return a;
-	}
+		return v;
 
+	}
+//correct but other code is not right
 }

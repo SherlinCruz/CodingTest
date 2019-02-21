@@ -91,32 +91,35 @@ public class CodingTests {
 		expected.add("Hello");
 		assertEquals(expected, result);
 	}
-	
-	// 5. Have a function that takes in a HashMap of people (Strings) to their bank account balance (Integer).
+
+	// 5. Have a function that takes in a HashMap of people (Strings) to their bank
+	// account balance (Integer).
 	// The function should return the total amount of money in the bank.
 	@Test
 	public void testBankMoney() {
 		HashMap<String, Integer> accounts = new HashMap<>();
-		accounts.put( "Sherlin", 3000);
-		accounts.put( "Mike", 3);
-		int total = MyFunctions.getTotalMoneyInBank( accounts );
+		accounts.put("Sherlin", 3000);
+		accounts.put("Mike", 3);
+		int total = MyFunctions.getTotalMoneyInBank(accounts);
 		assertEquals(3003, total);
 	}
-	
-	// 5. Have a function that takes in a HashMap of people (Strings) to their bank account balance (Integer).
-	// The function should return an ArrayList of anyone with a negative account balance
+
+	// 5. Have a function that takes in a HashMap of people (Strings) to their bank
+	// account balance (Integer).
+	// The function should return an ArrayList of anyone with a negative account
+	// balance
 	@Test
 	public void findOverdraftAccounts() {
 		HashMap<String, Integer> accounts = new HashMap<>();
-		accounts.put( "Sherlin", -50);
-		accounts.put( "Mike", 20);
-		accounts.put( "Bob", -20);
-		
+		accounts.put("Sherlin", -50);
+		accounts.put("Mike", 20);
+		accounts.put("Bob", -20);
+
 		ArrayList<String> cheapskates = new ArrayList<>();
-		cheapskates.add( "Sherlin" );
-		cheapskates.add( "Bob" );
-		
-		ArrayList<String> out = MyFunctions.findCheapskates( accounts );
+		cheapskates.add("Sherlin");
+		cheapskates.add("Bob");
+
+		ArrayList<String> out = MyFunctions.findCheapskates(accounts);
 		assertEquals(cheapskates, out);
 	}
 }
