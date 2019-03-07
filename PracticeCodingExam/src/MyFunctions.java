@@ -40,7 +40,7 @@ public class MyFunctions {
 
 				saveName = "TIE";
 
-				System.out.println(number);
+				//System.out.println(number);
 
 			}
 
@@ -69,7 +69,7 @@ public class MyFunctions {
 			bankAccounts.put(name, credit);
 
 		} else {
-			System.out.println(" Person Does Not Exist");
+			//System.out.println(" Person Does Not Exist");
 
 			bankAccounts.put(name, credit);
 
@@ -107,25 +107,47 @@ public class MyFunctions {
 		return totalAmount;
 	}
 
-	public static ArrayList<String> findCheapskates(HashMap<String, Integer> accounts) {
+	public static int findCheapskates(HashMap<String, Integer> accounts) {
 		// TODO Auto-generated method stub
 
-		ArrayList<String> v = new ArrayList<String>();
 		
+ 
+		int returingValue = 0;
+		
+		for (String name : accounts.keySet()) {
 
-		for(String name : accounts.keySet()) {
+			if (accounts.get(name) <= -1) {
 
-			if (accounts.get(name)<= -1) {
-
-	
-				v.add(name);
+				returingValue = returingValue + 1 ;
 
 			}
-			System.out.println(v);
+			System.out.println(returingValue);
 		}
 
-		return v;
+		return returingValue;
 
 	}
 //correct but other code is not right
+
+	public static int findCommon(HashMap<String, String> hashMap1, HashMap<String, String> hashMap2) {
+
+		int count = 0;
+
+		for (String name : hashMap1.keySet()) {
+			String a = hashMap1.get(name);// get second thing of the hashmap.
+			String b = hashMap2.get(name);
+
+			if (a.equals(b)) {
+
+				count = count + 1;
+			//	System.out.println("count : " + count);
+			}
+
+		}
+
+		return count;
+	}
 }
+
+//	name.equalsIgnoreCase(anotherString);
+// to compare the stings. 

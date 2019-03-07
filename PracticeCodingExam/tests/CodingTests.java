@@ -106,7 +106,7 @@ public class CodingTests {
 
 	// 5. Have a function that takes in a HashMap of people (Strings) to their bank
 	// account balance (Integer).
-	// The function should return an ArrayList of anyone with a negative account
+	// The function should return int of anyone with a negative account
 	// balance
 	@Test
 	public void findOverdraftAccounts() {
@@ -115,11 +115,26 @@ public class CodingTests {
 		accounts.put("Mike", 20);
 		accounts.put("Bob", -20);
 
-		ArrayList<String> cheapskates = new ArrayList<>();
-		cheapskates.add("Sherlin");
-		cheapskates.add("Bob");
+		int out = MyFunctions.findCheapskates(accounts);
+		assertEquals(2, out);
+	}
+	
+	// 6. Write a function that takes in two HashMaps.
+	// Return the number of keys and values that the HashMaps have in common.
+	@Test
+	public void findCommon(){
+		HashMap<String, String> hashMap1 = new HashMap<>();
+		hashMap1.put("Nancy", "a");
+		hashMap1.put("Jack", "b");
+		
+		HashMap<String, String> hashMap2 = new HashMap<>();
+		hashMap2.put("Roberto", "a");
+		hashMap2.put("Sherlin", "c");
+		hashMap2.put("Jack", "b");
+		hashMap2.put("Nancy", "a");
 
-		ArrayList<String> out = MyFunctions.findCheapskates(accounts);
-		assertEquals(cheapskates, out);
+		
+		int numCommon = MyFunctions.findCommon( hashMap1, hashMap2 );
+		assertEquals(2, numCommon);
 	}
 }
